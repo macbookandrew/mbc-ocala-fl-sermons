@@ -34,8 +34,15 @@ if ($query) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><?php echo $pageTitle . $siteTitle; ?></title>
-    <link type="text/css" href="/wp-content/themes/MBC-Ocala-FL/style.css" rel="stylesheet" />
-    <script type="text/javascript" src="../player/swfobject1-5/swfobject.js"></script>
+
+    <script type="text/javascript" src="/wp-includes/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/wp-includes/js/mediaelement/mediaelement-and-player.min.js"></script>
+    <link href="/wp-includes/js/mediaelement/mediaelementplayer.min.css" rel="stylesheet" />
+    <script>
+        jQuery(document).ready(function($){
+            $('video,audio').mediaelementplayer(/* Options */);
+        });
+    </script>
 </head>
 <body style="color: #ffffff; background: none; background-color: #5578B0; text-align: center;">
 
@@ -48,22 +55,7 @@ if ($query) {
     <?php echo $sermonServiceTime; ?> - <?php echo date("F j, Y", strtotime($sermonDate)); ?>
 </div>
 
-<div id="flashcontent" style="margin: 10px 0;"></div>
-
-<?php if (strpos($sermonVideoFile, 'mp4')) {?>
-<video src="<?php echo $sermonVideoPath.$sermonVideoFile; ?>" controls preload="auto" autoplay>
-<?php } else { ?>
-<script type='text/javascript'>
-  var so = new SWFObject('../player/video-player.swf','mpl','640','384','9');
-  so.addParam('allowfullscreen','true');
-  so.addParam('allowscriptaccess','always');
-  so.addParam('wmode','opaque');
-  so.addVariable('autostart','true');
-  so.addVariable('file','<?php echo $sermonVideoPath.$sermonVideoFile; ?>');
-  so.write('flashcontent');
-</script>
-<?php } ?>
-
+    <video src="<?php echo $sermonVideoPath.$sermonVideoFile; ?>" controls preload="auto" autoplay>
 
 </body>
 </html>
