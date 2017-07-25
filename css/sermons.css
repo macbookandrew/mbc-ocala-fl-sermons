@@ -1,0 +1,57 @@
+.month-header {
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin: 10px 0;
+    background-color: #5678B0;
+}
+
+.individual-sermon {
+    margin: 0 10px;
+    padding: 10px 0;
+    border-bottom: 2px solid #5678B0;
+}
+
+p.sermon-info {
+    margin-bottom: 0;
+}
+
+.sermon-title  {
+    font-weight: bold;
+}
+
+.listen-now-container {
+    float: right;
+    margin-left: 10px;
+}
+
+.sermon-link {
+    background: url(../images/sermon-icons.svg) no-repeat 0 0;
+    padding-left: 19px;
+    margin-bottom: 6px;
+    height: 16px;
+    line-height: 100%;
+}
+
+.listen.sermon-link {
+    background-position-y: 0;
+    display: block;
+}
+
+.watch.sermon-link {
+    background-position-y: -16px;
+    display: block;
+}
+
+.download.sermon-link {
+    background-position-y: -32px;
+    display: inline;
+}
+
+.mediaSlide {
+    padding-left: 15px;
+}
+
+.sermon-notes {
+    display: block;
+}
