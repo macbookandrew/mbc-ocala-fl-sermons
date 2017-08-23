@@ -6,8 +6,8 @@ $file = $_GET['file'];
 
 //   set variables from inputs
 $file_path = filter_input(INPUT_GET, 'file', FILTER_SANITIZE_STRING);
-$uploads_dir = wp_get_upload_dir();
-$full_file_path = $uploads_dir['basedir'].$set.'/'.str_replace('&#39;','\'',$file_path);
+$uploads_dir = '/home4/memorial/public_html/wp-content/uploads/';
+$full_file_path = $uploads_dir.$set.'/'.str_replace('&#39;','\'',$file_path);
 $file_extension = substr(strrchr($file_path, "."), 1);
 if (!isset($file_name_to_use)) {$file_name_to_use = basename($full_file_path);}
 
